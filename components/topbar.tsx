@@ -2,6 +2,7 @@
 import React, { ComponentProps } from "react";
 import { User, Switch, Button } from "@nextui-org/react";
 import { BsFillMoonFill, BsFillSunFill, BsFillGearFill } from "react-icons/bs";
+import ThemeSwitch from "@/components/theme-switch";
 
 interface TopbarProps extends ComponentProps<"div"> {}
 
@@ -19,10 +20,7 @@ export default function Topbar({ className, ...props }: TopbarProps) {
         }}
       />
       <div className="flex items-center gap-2">
-        <Switch
-          startContent={<BsFillMoonFill />}
-          endContent={<BsFillSunFill />}
-        />
+        <ThemeSwitch />
         <Button size="sm" isIconOnly radius="full">
           <BsFillGearFill />
         </Button>
