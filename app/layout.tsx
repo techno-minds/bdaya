@@ -19,11 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} h-screen`}>
-        <NextUIProviderClient>
-          <NextThemesProvider attribute="class" defaultTheme="system">
-            {children}
-          </NextThemesProvider>
-        </NextUIProviderClient>
+        <NextThemesProvider attribute="class" defaultTheme="system">
+          <NextUIProviderClient>{children}</NextUIProviderClient>
+        </NextThemesProvider>
       </body>
     </html>
   );
