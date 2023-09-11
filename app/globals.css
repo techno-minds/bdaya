@@ -8,6 +8,10 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* * {
+  outline: 1px solid red;
+} */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -24,4 +28,20 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+
+
+@media screen and (min-width:767px) {
+  .h-100vh-50px {
+    height: calc(100vh - 50px) !important;
+  }
+}
+
+.h-90per {
+  height: 90%;
+}
+
+.flow-wrap {
+  flex-flow: wrap;
 }
