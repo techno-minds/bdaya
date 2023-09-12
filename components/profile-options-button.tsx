@@ -37,6 +37,7 @@ export function ProfileOptionsButton({}: IProfileOptionsButtonProps) {
               <DropdownItem
                 key={key}
                 startContent={<Icon className="text-lg" />}
+                aria-label={key}
               >
                 {label}
               </DropdownItem>

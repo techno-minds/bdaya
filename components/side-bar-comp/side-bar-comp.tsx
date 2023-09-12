@@ -1,11 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import LinkButton from "./LinkButtons/LinkButton";
-import LogOut from "./LogOut/LogOut";
+import LinkButton from "./tab-link-btn/tab-link-btn";
+import LogOut from "./log-out-btn.tsx/log-out-btn";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
 import { Button } from "@nextui-org/react";
 import { useMediaQuery } from "@mantine/hooks";
+import Logo from "./Logo/Logo";
+import { routes } from "@/data/route-tabs";
 
 const variants = {
   open: { opacity: 1, x: 0 },
@@ -18,23 +20,23 @@ function SideBar() {
   return (
     <>
       <motion.div
-        className="flex justify-between items-center sm:relative absolute sm:top-0 sm:left-0 h-100vh-50px h-screen flex-col bg-white py-5 px-3"
+        className="flex shadow-lg bg-white dark:bg-black dark:shadow-slate-700 justify-between items-center sm:relative absolute sm:top-0 sm:left-0 z-10 h-screen flex-col py-5 px-3"
         animate={matches ? (isOpen ? "open" : "closed") : "null"}
         variants={variants}
       >
+        <Logo />
         <div className="flex border-b-2 w-full pb-3 h-90per items-start overflow-auto content-start flex-wrap gap-y-5">
-          <LinkButton nameBtn="Route 1" href="#" />
-          <LinkButton nameBtn="Route 2" href="#" />
-          <LinkButton nameBtn="Route 3" href="#" />
-          <LinkButton nameBtn="Route 4" href="#" />
-          <LinkButton nameBtn="Route 5" href="#" />
+          {routes.map(({ key, url, name, Icon }) => {
+            return <LinkButton key={key} url={url} name={name} Icon={Icon} />;
+          })}
         </div>
         <LogOut />
       </motion.div>
       <Button
-        className="flex justify-center items-center absolute bottom-5 right-5 w-12 h-12 text-2xl sm:hidden"
+        className="flex justify-center z-30 items-center rounded-full absolute bottom-5 right-5 w-12 h-12 text-2xl sm:hidden"
         onClick={() => setIsOpen((isOpen) => !isOpen)}
         color="success"
+        isIconOnly
       >
         <TiThMenu />
       </Button>

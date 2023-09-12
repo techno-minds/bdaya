@@ -1,8 +1,6 @@
 import React from "react";
 import Topbar from "@/components/topbar";
-import Logo from "@/components/Logo/Logo";
-import SideBar from "@/components/SideBar/SideBar";
-import React from "react";
+import SideBar from "@/components/side-bar-comp/side-bar-comp";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,8 +9,6 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="grid grid-rows-[60px_1fr] grid-cols-1 md:grid-cols-[250px_1fr] h-screen">
-      <Logo />
-      <div>NavBar</div>
       <SideBar />
       <Topbar
         className="md:col-start-2 row-end"

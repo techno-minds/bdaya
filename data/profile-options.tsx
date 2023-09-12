@@ -15,7 +15,7 @@ export const options: ProfileOptionsType[] = [
     Icon: PiPlaceholderFill,
   },
   {
-    key: "option",
+    key: "option2",
     label: "Option",
     Icon: PiPlaceholderFill,
   },

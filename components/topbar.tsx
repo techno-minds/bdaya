@@ -30,6 +30,7 @@ export default function Topbar({
           avatarProps={{
             src: "https://i.pravatar.cc/150?u=a04258114e29026702d",
           }}
+          className="z-0"
         />
         <div className="flex items-center gap-2">
           <Button size="sm" isIconOnly radius="full" variant="light">
