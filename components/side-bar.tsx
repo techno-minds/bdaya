@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import LinkButton from "./tab-link-btn/tab-link-btn";
-import LogOut from "./log-out-btn.tsx/log-out-btn";
+import LinkButton from "./tab-link-btn";
+import LogOut from "./log-out-btn";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
 import { Button } from "@nextui-org/react";
 import { useMediaQuery } from "@mantine/hooks";
-import Logo from "./Logo/Logo";
+import Logo from "./Logo";
 import { routes } from "@/data/route-tabs";
 
 const variants = {
