@@ -21,8 +21,6 @@ export default function Topbar({
   role,
   ...props
 }: TopbarProps) {
-  const { addNotifications } = useNotifications();
-
   return (
     <div className={cn("w-full flex flex-col", className)}>
       <div
@@ -37,20 +35,6 @@ export default function Topbar({
           }}
         />
         <div className="flex items-center gap-2">
-          <Button
-            isIconOnly
-            onClick={() =>
-              addNotifications([
-                {
-                  key: crypto.randomUUID(),
-                  label: "Notifications",
-                  description: "You have received on notification",
-                },
-              ])
-            }
-          >
-            <FaPlus />
-          </Button>
           <NotificationsButton />
           <ProfileOptionsButton />
         </div>
