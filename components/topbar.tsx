@@ -6,6 +6,7 @@ import { FaBell } from "react-icons/fa";
 import ThemeSwitch from "@/components/theme-switch";
 import { cn } from "@/lib/utils";
 import { ProfileOptionsButton } from "./profile-options-button";
+import { NotificationsButton } from "@/components/notifications-button";
 
 interface TopbarProps extends ComponentProps<"div"> {
   name?: string;
@@ -32,9 +33,7 @@ export default function Topbar({
           }}
         />
         <div className="flex items-center gap-2">
-          <Button size="sm" isIconOnly radius="full" variant="light">
-            <FaBell className="text-lg" />
-          </Button>
+          <NotificationsButton notifications={[]} />
           <ProfileOptionsButton />
         </div>
       </div>
