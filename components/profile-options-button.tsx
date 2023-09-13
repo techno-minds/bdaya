@@ -18,8 +18,8 @@ export function ProfileOptionsButton({}: IProfileOptionsButtonProps) {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button size="sm" isIconOnly radius="full" variant="light">
-          <BsThreeDotsVertical className="text-lg" />
+        <Button isIconOnly radius="full" variant="light">
+          <BsThreeDotsVertical className="text-lg w-[20px] h-[20px]" />
         </Button>
       </DropdownTrigger>
       <DropdownMenu>
