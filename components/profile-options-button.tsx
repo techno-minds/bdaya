@@ -29,6 +29,7 @@ export function ProfileOptionsButton({}: IProfileOptionsButtonProps) {
             <DropdownItem
               isReadOnly
               className="data-[hover=true]:bg-transparent cursor-default"
+              textValue="Theme Switch"
             >
               <ThemeSwitch />
             </DropdownItem>
