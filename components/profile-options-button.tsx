@@ -22,7 +22,7 @@ export function ProfileOptionsButton({}: IProfileOptionsButtonProps) {
           <BsThreeDotsVertical className="text-lg w-[20px] h-[20px]" />
         </Button>
       </DropdownTrigger>
-      <DropdownMenu>
+      <DropdownMenu aria-label="profile options">
         {
           // @ts-expect-error
           <DropdownSection showDivider>
