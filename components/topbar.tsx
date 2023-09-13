@@ -1,12 +1,14 @@
 "use client";
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useState } from "react";
 import { User, Switch, Button, Divider } from "@nextui-org/react";
 import { BsFillMoonFill, BsFillSunFill, BsFillGearFill } from "react-icons/bs";
-import { FaBell } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
 import ThemeSwitch from "@/components/theme-switch";
 import { cn } from "@/lib/utils";
 import { ProfileOptionsButton } from "./profile-options-button";
 import { NotificationsButton } from "@/components/notifications-button";
+import { NotificationType } from "@/data/notifications";
+import useNotifications from "@/hooks/useNotifications";
 
 interface TopbarProps extends ComponentProps<"div"> {
   name?: string;
@@ -19,6 +21,8 @@ export default function Topbar({
   role,
   ...props
 }: TopbarProps) {
+  const { addNotifications } = useNotifications();
+
   return (
     <div className={cn("w-full flex flex-col", className)}>
       <div
@@ -33,7 +37,21 @@ export default function Topbar({
           }}
         />
         <div className="flex items-center gap-2">
-          <NotificationsButton notifications={[]} />
+          <Button
+            isIconOnly
+            onClick={() =>
+              addNotifications([
+                {
+                  key: crypto.randomUUID(),
+                  label: "Notifications",
+                  description: "You have received on notification",
+                },
+              ])
+            }
+          >
+            <FaPlus />
+          </Button>
+          <NotificationsButton />
           <ProfileOptionsButton />
         </div>
       </div>
