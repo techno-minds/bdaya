@@ -16,19 +16,20 @@ import { ProfileOptionsType, options } from "@/data/profile-options";
 interface IProfileOptionsButtonProps {}
 export function ProfileOptionsButton({}: IProfileOptionsButtonProps) {
   return (
-    <Dropdown>
+    <Dropdown placement="bottom-end">
       <DropdownTrigger>
-        <Button size="sm" isIconOnly radius="full" variant="light">
-          <BsThreeDotsVertical className="text-lg" />
+        <Button isIconOnly radius="full" variant="light">
+          <BsThreeDotsVertical className="text-lg w-[20px] h-[20px]" />
         </Button>
       </DropdownTrigger>
-      <DropdownMenu>
+      <DropdownMenu aria-label="profile options">
         {
           // @ts-expect-error
           <DropdownSection showDivider>
             <DropdownItem
               isReadOnly
               className="data-[hover=true]:bg-transparent cursor-default"
+              textValue="Theme Switch"
             >
               <ThemeSwitch />
             </DropdownItem>

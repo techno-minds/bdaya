@@ -1,11 +1,14 @@
 "use client";
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useState } from "react";
 import { User, Switch, Button, Divider } from "@nextui-org/react";
 import { BsFillMoonFill, BsFillSunFill, BsFillGearFill } from "react-icons/bs";
-import { FaBell } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa6";
 import ThemeSwitch from "@/components/theme-switch";
 import { cn } from "@/lib/utils";
 import { ProfileOptionsButton } from "./profile-options-button";
+import { NotificationsButton } from "@/components/notifications-button";
+import { NotificationType } from "@/data/notifications";
+import useNotifications from "@/hooks/useNotifications";
 
 interface TopbarProps extends ComponentProps<"div"> {
   name?: string;
@@ -33,9 +36,7 @@ export default function Topbar({
           className="z-0"
         />
         <div className="flex items-center gap-2">
-          <Button size="sm" isIconOnly radius="full" variant="light">
-            <FaBell className="text-lg" />
-          </Button>
+          <NotificationsButton />
           <ProfileOptionsButton />
         </div>
       </div>

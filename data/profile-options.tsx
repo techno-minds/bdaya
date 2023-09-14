@@ -10,7 +10,7 @@ export interface ProfileOptionsType {
 
 export const options: ProfileOptionsType[] = [
   {
-    key: "option",
+    key: "option1",
     label: "Option",
     Icon: PiPlaceholderFill,
   },
