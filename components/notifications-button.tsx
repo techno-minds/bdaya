@@ -10,13 +10,12 @@ import {
   DropdownTrigger,
 } from "@nextui-org/react";
 import React from "react";
-import { FaBell } from "react-icons/fa6";
+import { FaBell, FaBoxOpen } from "react-icons/fa6";
 
 interface INotificationsButtonProps {}
 
 export function NotificationsButton({}: INotificationsButtonProps) {
-  const { notifications, unread, addNotifications, onRead } =
-    useNotifications();
+  const { notifications, unread, onRead } = useNotifications();
 
   return (
     <Badge
@@ -36,19 +35,30 @@ export function NotificationsButton({}: INotificationsButtonProps) {
             <FaBell className="w-[20px] h-[20px]" />
           </Button>
         </DropdownTrigger>
-        <DropdownMenu items={notifications}>
-          {(notification) => (
+        <DropdownMenu>
+          {Boolean(notifications.length) ? (
+            notifications.map(
+              ({ description, unread, label }: NotificationType) => (
+                <DropdownItem
+                  key="notif1"
+                  startContent={<FaBell className="w-[20px] h-[20px] mx-4" />}
+                  description={description}
+                  className={cn(unread ? "bg-slate-200 dark:bg-slate-600" : "")}
+                >
+                  {label}
+                </DropdownItem>
+              )
+            )
+          ) : (
             <DropdownItem
-              key="notif1"
-              startContent={<FaBell className="w-[20px] h-[20px] mx-4" />}
-              description={(notification as NotificationType).description}
-              className={cn(
-                (notification as NotificationType).unread
-                  ? "bg-slate-200 dark:bg-slate-600"
-                  : ""
-              )}
+              isReadOnly
+              className="data-[hover=true]:bg-transparent cursor-default"
             >
-              {(notification as NotificationType).label}
+              <FaBoxOpen className="text-gray-400 dark:text-gray-200 w-[70px] h-[70px] mx-auto" />
+              <p className="text-center text-lg font-semibold mt-2">Empty</p>
+              <p className="text-center text-gray-500 dark:text-gray-300">
+                There are no notifications currently
+              </p>
             </DropdownItem>
           )}
         </DropdownMenu>
