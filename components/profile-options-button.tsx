@@ -16,7 +16,7 @@ import { ProfileOptionsType, options } from "@/data/profile-options";
 interface IProfileOptionsButtonProps {}
 export function ProfileOptionsButton({}: IProfileOptionsButtonProps) {
   return (
-    <Dropdown>
+    <Dropdown placement="bottom-end">
       <DropdownTrigger>
         <Button isIconOnly radius="full" variant="light">
           <BsThreeDotsVertical className="text-lg w-[20px] h-[20px]" />
