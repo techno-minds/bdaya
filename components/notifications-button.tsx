@@ -35,7 +35,7 @@ export function NotificationsButton({}: INotificationsButtonProps) {
             <FaBell className="w-[20px] h-[20px]" />
           </Button>
         </DropdownTrigger>
-        <DropdownMenu>
+        <DropdownMenu aria-label="notifications menu">
           {Boolean(notifications.length) ? (
             notifications.map(
               ({ description, unread, label }: NotificationType) => (
@@ -53,6 +53,7 @@ export function NotificationsButton({}: INotificationsButtonProps) {
             <DropdownItem
               isReadOnly
               className="data-[hover=true]:bg-transparent cursor-default"
+              textValue="empty"
             >
               <FaBoxOpen className="text-gray-400 dark:text-gray-200 w-[70px] h-[70px] mx-auto" />
               <p className="text-center text-lg font-semibold mt-2">Empty</p>
