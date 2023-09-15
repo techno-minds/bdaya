@@ -7,8 +7,7 @@ function LinkButton({ url, name, Icon }: tabsType) {
   return (
     <Button
       className="w-full justify-start rounded-md"
-      color="primary"
-      variant="ghost"
+      color="primary" variant="light"
     >
       <Link
         className="flex justify-center items-center text-2xl gap-x-3"
