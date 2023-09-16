@@ -5,17 +5,19 @@ import React from "react";
 
 function LinkButton({ url, name, Icon }: tabsType) {
   return (
-    <Button
-      className="w-full justify-start rounded-md"
-      color="primary" variant="light"
+    <Link
+      className=" text-lg w-full gap-x-3"
+      href={url}
     >
-      <Link
-        className="flex justify-center items-center text-2xl gap-x-3"
-        href={url}
+      <Button
+        className="w-full flex justify-start items-centery text-xl rounded-md"
+        color="primary"
+        variant="light"
+        startContent={<Icon />}
       >
-        {<Icon />} {name}
-      </Link>
-    </Button>
+        {name}
+      </Button>
+    </Link>
   );
 }
 

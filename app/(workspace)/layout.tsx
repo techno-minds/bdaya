@@ -1,4 +1,3 @@
-import React from "react";
 import Topbar from "@/components/topbar";
 import SideBar from "@/components/side-bar";
 import { NotificationsProvider } from "@/hooks/useNotifications";

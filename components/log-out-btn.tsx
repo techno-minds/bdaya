@@ -3,7 +3,11 @@ import React from "react";
 
 function LogOut() {
   return (
-    <Button className="w-full rounded self-end" color="danger" variant="flat">
+    <Button
+      className="w-full rounded self-end text-lg"
+      color="danger"
+      variant="flat"
+    >
       Log Out
     </Button>
   );

@@ -4,7 +4,7 @@ import LinkButton from "./tab-link-btn";
 import LogOut from "./log-out-btn";
 import { motion } from "framer-motion";
 import { TiThMenu } from "react-icons/ti";
-import { Button } from "@nextui-org/react";
+import { Button, Divider } from "@nextui-org/react";
 import { useMediaQuery } from "@mantine/hooks";
 import Logo from "./Logo";
 import { routes } from "@/data/route-tabs";
@@ -20,16 +20,18 @@ function SideBar() {
   return (
     <>
       <motion.div
-        className="flex shadow-lg bg-white dark:bg-black dark:shadow-slate-700 justify-between items-center sm:relative absolute sm:top-0 sm:left-0 z-10 h-screen flex-col py-5 px-3"
+        className="flex bg-white dark:bg-black dark:shadow-slate-700 justify-between items-center sm:relative absolute sm:top-0 sm:left-0 z-10 h-screen flex-col py-5 px-3"
         animate={matches ? (isOpen ? "open" : "closed") : "null"}
         variants={variants}
       >
+        <Divider className="absolute top-0 right-0" orientation="vertical" />
         <Logo />
-        <div className="flex border-b-2 w-full pb-3 h-90per items-start overflow-auto content-start flex-wrap gap-y-5">
+        <div className="flex w-full pb-3 h-90per items-start overflow-auto content-start flex-wrap gap-y-5">
           {routes.map(({ key, url, name, Icon }) => {
             return <LinkButton key={key} url={url} name={name} Icon={Icon} />;
           })}
         </div>
+        <Divider />
         <LogOut />
       </motion.div>
       <Button
