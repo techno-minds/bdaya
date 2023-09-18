@@ -1,14 +1,15 @@
 import { Button } from "@nextui-org/react";
-import React from "react";
+import { TfiCup } from "react-icons/tfi";
 
 function LogOut() {
   return (
     <Button
-      className="w-full rounded self-end text-lg"
+      className="w-full rounded justify-start self-end text-md"
       color="danger"
       variant="flat"
+      startContent={<TfiCup />}
     >
-      Log Out
+      Sign Out
     </Button>
   );
 }

@@ -1,8 +1,6 @@
 import { IconType } from "react-icons";
-import { FaHome } from "react-icons/fa";
-import { RiCustomerService2Line } from "react-icons/ri";
-import { CiSettings } from "react-icons/ci";
-import { Key, ReactNode } from "react";
+import { TfiCup } from "react-icons/tfi";
+import { Key } from "react";
 import { Url } from "next/dist/shared/lib/router/router";
 
 export interface tabsType {
@@ -15,38 +13,26 @@ export interface tabsType {
 export const routes: tabsType[] = [
   {
     key: 1,
-    name: "Home",
+    name: "Button",
     url: "#",
-    Icon: FaHome,
+    Icon: TfiCup,
   },
   {
     key: 2,
-    name: "Settings",
+    name: "Button",
     url: "#",
-    Icon: CiSettings,
+    Icon: TfiCup,
   },
   {
     key: 3,
-    name: "Contact Us",
+    name: "Button",
     url: "#",
-    Icon: RiCustomerService2Line,
+    Icon: TfiCup,
   },
   {
     key: 4,
-    name: "Home",
+    name: "Button",
     url: "#",
-    Icon: FaHome,
-  },
-  {
-    key: 5,
-    name: "Settings",
-    url: "#",
-    Icon: CiSettings,
-  },
-  {
-    key: 6,
-    name: "Contact Us",
-    url: "#",
-    Icon: RiCustomerService2Line,
-  },
+    Icon: TfiCup,
+  }
 ];
