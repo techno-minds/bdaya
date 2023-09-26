@@ -3,6 +3,7 @@ import Image from "next/image";
 function Logo() {
   return (
     <Image
+      className="hidden sm:block"
       placeholder="blur"
       blurDataURL={"/logo.png"}
       src={"/logo.png"}
